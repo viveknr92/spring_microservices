@@ -8,6 +8,7 @@ node {
     stage("mvn build") {
         echo "PATH = ${PATH}"
         sh "cd MovieInfoService"
+        sh "pwd"
         sh "mvn clean install -DskipTests"
     }
 }

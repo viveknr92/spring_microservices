@@ -1,4 +1,10 @@
 node {
+    stage("clean workspace") {
+        deleteDir()
+    }
+    stage("git checkout") {
+        checkout scm
+    }
     stage("mvn build") {
         echo "PATH = ${PATH}"
         sh "mvn clean install -DskipTests"

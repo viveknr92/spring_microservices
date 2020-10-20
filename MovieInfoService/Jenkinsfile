@@ -1,0 +1,6 @@
+pipeline {
+    stage("mvn build") {
+        echo "PATH = ${PATH}"
+        sh "mvn clean install -DskipTests"
+    }
+}

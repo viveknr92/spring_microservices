@@ -4,8 +4,9 @@
 #RUN mvn -f /home/app/pom.xml clean package
 
 FROM openjdk:11-jre-slim
+RUN mkdir -p /vivek
 WORKDIR /vivek
-COPY . ./vivek
+COPY . /vivek
 RUN pwd
 RUN ls
 # COPY /jenkins/workspace/maven_project/MovieInfoService/target/MovieInfoService-0.0.1-SNAPSHOT.jar demo.jar

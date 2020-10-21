@@ -11,4 +11,4 @@ RUN pwd
 RUN ls
 # COPY /jenkins/workspace/maven_project/MovieInfoService/target/MovieInfoService-0.0.1-SNAPSHOT.jar demo.jar
 EXPOSE 8081
-ENTRYPOINT ["java","-jar","MovieInfoService-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","target/MovieInfoService-0.0.1-SNAPSHOT.jar"]

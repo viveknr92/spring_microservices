@@ -7,6 +7,8 @@ FROM openjdk:11-jre-slim
 RUN mkdir -p /vivek
 WORKDIR /vivek
 COPY . /vivek
+RUN pwd
+RUN ls
 # COPY /jenkins/workspace/maven_project/MovieInfoService/target/MovieInfoService-0.0.1-SNAPSHOT.jar demo.jar
 EXPOSE 8081
-ENTRYPOINT ["java","-jar","demo.jar"]
+ENTRYPOINT ["java","-jar","MovieInfoService-0.0.1-SNAPSHOT.jar"]

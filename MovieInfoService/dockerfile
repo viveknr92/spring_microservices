@@ -4,6 +4,6 @@
 #RUN mvn -f /home/app/pom.xml clean package
 
 FROM openjdk:11-jre-slim
-COPY MovieInfoService/target/MovieInfoService-0.0.1-SNAPSHOT.jar demo.jar
+COPY /var/lib/jenkins/workspace/maven_project/MovieInfoService/target/MovieInfoService-0.0.1-SNAPSHOT.jar demo.jar
 EXPOSE 8081
 ENTRYPOINT ["java","-jar","demo.jar"]

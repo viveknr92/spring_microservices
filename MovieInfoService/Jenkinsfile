@@ -13,4 +13,14 @@ node {
             sh "mvn clean install -DskipTests"
         }
     }
+    stage("docker build") {
+        sh "sudo docker build -t movieinfo ."
+        sh "sudo docker images"
+        sh "sudo docker ps"
+    }
+    stage("docker run") {
+        sh "docker run -p 8081:8081 movieinfo ."
+        sh "sudo docker images"
+        sh "sudo docker ps"
+    }
 }

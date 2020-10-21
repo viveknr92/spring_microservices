@@ -7,9 +7,10 @@ node {
     }
     stage("mvn build") {
         echo "PATH = ${PATH}"
-        bat "cd MovieInfoService"
-        sh "ls"
-        sh "pwd"
-        sh "mvn clean install -DskipTests"
+        dir("MovieInfoService") {
+            sh "ls"
+            sh "pwd"
+            sh "mvn clean install -DskipTests"
+        }
     }
 }

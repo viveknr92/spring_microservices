@@ -4,8 +4,8 @@
 #RUN mvn -f /home/app/pom.xml clean package
 
 FROM openjdk:11-jre-slim
-# RUN mkdir -p /vivek
-# WORKDIR /vivek
+RUN mkdir -p /vivek
+WORKDIR /vivek
 COPY . /vivek
 RUN pwd
 RUN ls

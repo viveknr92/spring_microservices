@@ -17,7 +17,6 @@ node {
         sh "sudo docker build -t movieinfo MovieInfoService"
         sh "sudo docker images"
         sh "sudo docker ps"
-        sh "sudo docker rm $(sudo docker ps -aq)"
     }
     stage("docker run") {
         sh "sudo docker run -p 8081:8081 movieinfo ."

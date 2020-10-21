@@ -5,7 +5,7 @@
 
 FROM openjdk:11-jre-slim
 WORKDIR /vivek
-COPY . .
+COPY . ./vivek
 RUN pwd
 RUN ls
 # COPY /jenkins/workspace/maven_project/MovieInfoService/target/MovieInfoService-0.0.1-SNAPSHOT.jar demo.jar

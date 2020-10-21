@@ -14,7 +14,7 @@ node {
         }
     }
     stage("docker build") {
-        sh "sudo docker build -t movieinfo ."
+        sh "sudo docker build -t movieinfo MovieInfoService"
         sh "sudo docker images"
         sh "sudo docker ps"
     }

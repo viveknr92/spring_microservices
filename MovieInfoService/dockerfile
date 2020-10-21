@@ -5,6 +5,7 @@
 FROM openjdk:11-jre-slim
 WORKDIR /vivek
 COPY . ./vivek
+RUN cd /vivek/MovieInfoService/target
 RUN pwd
 RUN ls
 EXPOSE 8081

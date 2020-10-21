@@ -14,13 +14,13 @@ node {
         }
     }
     stage("docker build") {
-        sh "sudo docker build -t movieinfo ."
-        sh "sudo docker images"
-        sh "sudo docker ps"
+        sh "echo 1992 | sudo -S -k docker build -t movieinfo ."
+        sh "echo 1992 | sudo -S -k docker images"
+        sh "echo 1992 | sudo -S -k docker ps"
     }
     stage("docker run") {
-        sh "docker run -p 8081:8081 movieinfo ."
-        sh "sudo docker images"
-        sh "sudo docker ps"
+        sh "echo 1992 | sudo -S -k docker run -p 8081:8081 movieinfo ."
+        sh "echo 1992 | sudo -S -k docker images"
+        sh "echo 1992 | sudo -S -k docker ps"
     }
 }

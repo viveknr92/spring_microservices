@@ -1,0 +1,23 @@
+security:
+  oauth2:
+    client:
+      client-id: web
+      client-secret: webpass
+      user-authorization-uri: http://localhost:8282/oauth/authorize
+      access-token-uri: http://localhost:8282/oauth/token
+#      use-current-uri: false
+      pre-established-redirect-uri: http://localhost:8087/login
+#      registered-redirect-uri: http://localhost:8080/secure
+    resource:
+      token-info-uri: http://localhost:8282/oauth/check_token
+
+server:
+  servlet:
+    session:
+      cookie:
+        name: KSESSION
+  port: 8087
+
+spring:
+  application:
+    name: UIService

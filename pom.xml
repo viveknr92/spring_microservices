@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>spring_microservices</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spring_microservices</name>
+    <description>Spring MicroServices</description>
+    <properties>
+        <java.version>11</java.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+    </properties>
+    <packaging>pom</packaging>
+    <modules>
+        <module>config_server</module>
+        <module>Eureka</module>
+        <module>MovieCatalogService</module>
+        <module>OAuth-server</module>
+        <module>MovieInfoService</module>
+        <module>RatingService</module>
+        <module>UIService</module>
+        <module>zuul_service</module>
+    </modules>
+</project>

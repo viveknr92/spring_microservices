@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +20,8 @@ import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
 @RestController
+@EnableResourceServer
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MovieInfoServiceApplication {
 
     static int count = 0;
@@ -38,6 +43,7 @@ public class MovieInfoServiceApplication {
     String movieDbUrl;
 
 	@GetMapping("/{movieId}")
+	@PreAuthorize("hasAuthority('CAN_DELETE')")
 	public Movie getMovieInfo(@PathVariable("movieId") String movieId) throws Exception{
 //        TimeUnit.SECONDS.sleep(2);
         System.out.println("8081 port - Movie Info Service" + count);
